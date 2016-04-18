@@ -6,8 +6,8 @@
   "viewUrl": "http://jjanicechen.github.io/aimole-2048/",
   "players": 1,
   "verdict": {
-    "file": "",
-    "language": ""
+    "file": "verdict/verdict.py",
+    "language": "python"
   },
   "ai": [
     {
