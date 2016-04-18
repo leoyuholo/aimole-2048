@@ -4,10 +4,15 @@
   "author": "",
   "version": "1.0.0",
   "viewUrl": "http://jjanicechen.github.io/aimole-2048/",
+  "bgUrl": "https://cdn.rawgit.com/leoyuholo/aimole-othello/31730a5b8da34aabb0139e2e39f7dd92bcb2b0e6/dist/bg.jpg",
   "players": 1,
+  "ranking": {
+    "scheme": "max",
+    "baseScore": 0
+  },
   "verdict": {
-    "file": "",
-    "language": ""
+    "file": "verdict/verdict.py",
+    "language": "python"
   },
   "ai": [
     {
