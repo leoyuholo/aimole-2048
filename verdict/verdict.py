@@ -149,6 +149,7 @@ class Verdict:
             
             d = command['stdout'].strip().upper()
             if (d not in self.mp) or (not self.valid_move(self.mp[d])):
+                self.display['message'] = 'invalid'
                 break
 
             self.update(self.mp[d])
@@ -156,6 +157,8 @@ class Verdict:
             self.display['movement'] = self.mp[d]
             self.display['score'] = self.score
 
+        if self.display['message'] == 'player':
+           self.display['message'] = 'ok'
         self.report_winner()
 
 if __name__ == '__main__':
