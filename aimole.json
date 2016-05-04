@@ -14,6 +14,9 @@
     "file": "verdict/verdict.py",
     "language": "python"
   },
+  "codeTpl": {
+    "c": "codetemplate/tpl.c"
+  },
   "ai": [
     {
       "name": "normalplayer",
