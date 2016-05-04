@@ -1,9 +1,10 @@
 import json
 import random
 import sys
+import time
 class Verdict:
     def __init__(self):
-        self.seed = 2016
+        self.seed = int(time.time())
         random.seed(self.seed)
         self.board = [[0 for i in range(4)] for j in range(4)]
         self.score = 0
@@ -44,6 +45,11 @@ class Verdict:
                     'display' : self.display,
                     'score' : self.score
                  }
+
+        if self.seed:
+            action['seed'] = str(self.seed)
+            self.seed = None
+
         self.send_action(action)
         return self.query_command()
 
