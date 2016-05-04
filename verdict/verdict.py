@@ -1,10 +1,10 @@
 import json
 import random
 import sys
-from datetime import datetime
+import time
 class Verdict:
     def __init__(self):
-        self.seed = datetime.now()
+        self.seed = int(time.time())
         random.seed(self.seed)
         self.board = [[0 for i in range(4)] for j in range(4)]
         self.score = 0
@@ -47,7 +47,7 @@ class Verdict:
                  }
 
         if self.seed:
-            action['seed'] = self.seed
+            action['seed'] = str(self.seed)
             self.seed = None
 
         self.send_action(action)
