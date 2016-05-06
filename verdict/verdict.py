@@ -155,6 +155,10 @@ class Verdict:
             
             d = command['stdout'].strip().upper()
             if (d not in self.mp) or (not self.valid_move(self.mp[d])):
+                if d not in self.mp:
+                    self.display['movement'] = None
+                else:
+                    self.display['movement'] = self.mp[d]
                 self.display['message'] = 'invalid'
                 break
 
