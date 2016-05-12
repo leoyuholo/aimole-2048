@@ -16,6 +16,8 @@ class Verdict:
                 'RIGHT' : 2,
                 'DOWN' : 3
                }
+        self.TOTAL_TIME_LIMIT = 120000
+        self.total_time = 0
         self.display = {}
         
     def send_action(self, action):
@@ -118,6 +120,9 @@ class Verdict:
         return False
     
     def end_game(self):
+        #end if total time > total time limit
+        if self.total_time > self.TOTAL_TIME_LIMIT:
+            return True
         #not end if there is empty cell/adjacent cell with same value
         for i in range(4):
             for j in range(4):
@@ -163,12 +168,13 @@ class Verdict:
                 break
 
             self.update(self.mp[d])
+            self.total_time += command['time']
             self.display['newTile'] = self.generate_tile()
             self.display['movement'] = self.mp[d]
             self.display['score'] = self.score
 
         if self.display['message'] == 'player':
-           self.display['message'] = 'ok'
+            self.display['message'] = 'ok' if self.total_time <= self.TOTAL_TIME_LIMIT else 'ttle'
         self.report_winner()
 
 if __name__ == '__main__':
