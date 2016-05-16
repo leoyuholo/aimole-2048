@@ -146,6 +146,7 @@ class Verdict:
         self.display['players'] = self.players
         self.display['newTile'] = self.generate_tile()
         self.display['score'] = self.score
+        self.display['totalTime'] = 0
 
         while not self.end_game():
             command = self.query_player()
@@ -154,6 +155,8 @@ class Verdict:
             self.display['movement'] = None
             self.display['time'] = command['time']
             self.display['message'] = command['command']
+            self.total_time += command['time']
+            self.display['totalTime'] = self.total_time
 
             if command['command'] != 'player':
                 break
@@ -168,7 +171,6 @@ class Verdict:
                 break
 
             self.update(self.mp[d])
-            self.total_time += command['time']
             self.display['newTile'] = self.generate_tile()
             self.display['movement'] = self.mp[d]
             self.display['score'] = self.score
