@@ -68,8 +68,9 @@ class Verdict:
             x = random.randrange(0, 4)
             y = random.randrange(0, 4)
             if not self.board[x][y]:
-                self.board[x][y] = 2
-                return [x, y, 2]
+                new_value = random.choice([2, 4])
+                self.board[x][y] = new_value
+                return [x, y, new_value]
     
     def pull_left(self):
         #pull the board to left
