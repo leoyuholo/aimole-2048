@@ -16,7 +16,7 @@ class Verdict:
                 'RIGHT' : 2,
                 'DOWN' : 3
                }
-        self.TOTAL_TIME_LIMIT = 120000
+        self.TOTAL_TIME_LIMIT = 60000
         self.total_time = 0
         self.display = {}
         
