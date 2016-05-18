@@ -16,6 +16,7 @@
   },
   "codeTpl": {
     "c": "codetemplate/tpl.c",
+    "python": "codetemplate/tpl.py",
     "javascript": "codetemplate/tpl.js"
   },
   "ai": [
